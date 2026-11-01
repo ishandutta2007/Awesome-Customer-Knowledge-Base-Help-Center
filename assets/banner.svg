@@ -1,0 +1,188 @@
+<svg fill="none" viewBox="0 0 1200 420" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#050814" />
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.8" />
+    </linearGradient>
+
+    <!-- Filters for Glow -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="30" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .title {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      font-size: 42px;
+      fill: url(#textGrad);
+    }
+    .subtitle {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      fill: #94a3b8;
+    }
+    .tagline {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 2px;
+      fill: #38bdf8;
+      text-transform: uppercase;
+    }
+    .pill-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      fill: #e2e8f0;
+    }
+
+    /* Ambient Dynamic Floating Orbs */
+    @keyframes orbFloat1 {
+      0% { transform: translate(0px, 0px) scale(1); }
+      50% { transform: translate(40px, -25px) scale(1.1); }
+      100% { transform: translate(0px, 0px) scale(1); }
+    }
+    @keyframes orbFloat2 {
+      0% { transform: translate(0px, 0px) scale(1); }
+      50% { transform: translate(-35px, 30px) scale(1.15); }
+      100% { transform: translate(0px, 0px) scale(1); }
+    }
+    @keyframes pulseCard {
+      0%, 100% { stroke: #334155; }
+      50% { stroke: #6366f1; }
+    }
+    @keyframes wavePulse {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 360; }
+    }
+
+    .orb1 {
+      animation: orbFloat1 10s ease-in-out infinite;
+    }
+    .orb2 {
+      animation: orbFloat2 12s ease-in-out infinite;
+    }
+    .card-border {
+      animation: pulseCard 6s ease-in-out infinite;
+    }
+    .flow-wave {
+      stroke-dasharray: 12, 12;
+      animation: wavePulse 20s linear infinite;
+    }
+  </style>
+
+  <!-- Background Canvas -->
+  <rect width="1200" height="420" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Animated Glowing Background Elements (Deep Background) -->
+  <g opacity="0.45">
+    <circle class="orb1" cx="220" cy="110" r="130" fill="#6366f1" filter="url(#glow)" />
+    <circle class="orb2" cx="980" cy="300" r="140" fill="#06b6d4" filter="url(#glow)" />
+    <circle class="orb1" cx="1060" cy="90" r="90" fill="#a855f7" filter="url(#glow)" />
+  </g>
+
+  <!-- High-tech Grid Background Pattern -->
+  <g stroke="#1e293b" stroke-width="1" opacity="0.3">
+    <line x1="0" y1="70" x2="1200" y2="70" />
+    <line x1="0" y1="140" x2="1200" y2="140" />
+    <line x1="0" y1="210" x2="1200" y2="210" />
+    <line x1="0" y1="280" x2="1200" y2="280" />
+    <line x1="0" y1="350" x2="1200" y2="350" />
+    <line x1="150" y1="0" x2="150" y2="420" />
+    <line x1="300" y1="0" x2="300" y2="420" />
+    <line x1="450" y1="0" x2="450" y2="420" />
+    <line x1="600" y1="0" x2="600" y2="420" />
+    <line x1="750" y1="0" x2="750" y2="420" />
+    <line x1="900" y1="0" x2="900" y2="420" />
+    <line x1="1050" y1="0" x2="1050" y2="420" />
+  </g>
+
+  <!-- Dynamic Subtle Waves in Background (Never overlapping text) -->
+  <path class="flow-wave" d="M 0 380 Q 300 320 600 380 T 1200 380" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.3" />
+  <path class="flow-wave" d="M 0 395 Q 350 350 700 395 T 1200 395" fill="none" stroke="#818cf8" stroke-width="1.5" opacity="0.25" />
+
+  <!-- Outer Card Frame -->
+  <rect x="2" y="2" width="1196" height="416" rx="15" fill="none" stroke="#1e293b" stroke-width="2" />
+
+  <!-- FOREGROUND CONTENT: Header Tag, Title, Subtitle, Feature Badges -->
+  <g transform="translate(60, 48)">
+    <!-- Category Pill Tag -->
+    <rect x="0" y="0" width="310" height="30" rx="15" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2" opacity="0.95" />
+    <circle cx="16" cy="15" r="4" fill="#38bdf8" filter="url(#subtleGlow)" />
+    <text x="32" y="20" class="tagline">KNOWLEDGE BASE &amp; HELP CENTER</text>
+
+    <!-- Main Title (Clear Foreground) -->
+    <text x="0" y="80" class="title">Awesome Customer Knowledge Base</text>
+
+    <!-- Subtitle (Clear Foreground) -->
+    <text x="0" y="122" class="subtitle">Curated SaaS Platforms, Self-Hosted Portals &amp; Open-Source Help Centers</text>
+
+    <!-- Highlights Banner / Feature Badges -->
+    <g transform="translate(0, 160)">
+      <!-- Badge 1: AI Search & RAG -->
+      <g transform="translate(0, 0)">
+        <rect class="card-border" width="245" height="52" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5" />
+        <text x="18" y="32" class="pill-text">🤖 AI Search &amp; RAG Deflection</text>
+      </g>
+
+      <!-- Badge 2: Customer Portals -->
+      <g transform="translate(260, 0)">
+        <rect class="card-border" width="235" height="52" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5" />
+        <text x="18" y="32" class="pill-text">🌐 Self-Service Portals</text>
+      </g>
+
+      <!-- Badge 3: Article Analytics -->
+      <g transform="translate(510, 0)">
+        <rect class="card-border" width="245" height="52" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5" />
+        <text x="18" y="32" class="pill-text">📊 Content Analytics &amp; SEO</text>
+      </g>
+
+      <!-- Badge 4: Self-Hosted & OSS -->
+      <g transform="translate(770, 0)">
+        <rect class="card-border" width="295" height="52" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5" />
+        <text x="18" y="32" class="pill-text">⚡ 100% Open-Source &amp; Self-Hosted</text>
+      </g>
+    </g>
+
+    <!-- Live Metrics / Feature Pills Row -->
+    <g transform="translate(0, 240)">
+      <!-- Tech Stack Icons / Tags -->
+      <rect x="0" y="0" width="1065" height="54" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1" opacity="0.9" />
+      
+      <circle cx="28" cy="27" r="5" fill="#10b981" />
+      <text x="44" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="600" fill="#94a3b8">TOP SAAS: <tspan fill="#f8fafc">HubSpot • Zendesk • Freshdesk • Document360 • Guru • Bloomfire • GitBook</tspan></text>
+      
+      <line x1="680" y1="12" x2="680" y2="42" stroke="#334155" stroke-width="1" />
+      
+      <circle cx="704" cy="27" r="5" fill="#6366f1" />
+      <text x="720" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="600" fill="#94a3b8">OPEN-SOURCE: <tspan fill="#f8fafc">Chatwoot • Docusaurus • Outline • Wiki.js • Zammad</tspan></text>
+    </g>
+  </g>
+</svg>
